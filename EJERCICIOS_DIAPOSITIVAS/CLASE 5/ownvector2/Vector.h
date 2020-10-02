@@ -15,7 +15,7 @@ class Vector
 {
 private:
   int size;
-  double buffer[10000];
+  int buffer[10000];
   int pivot;
 
 public:
@@ -67,11 +67,10 @@ public:
 
   /**
    * Get the Value of the object
-   * @contract <getValue><> ---> <double>
-   * 
-   * @return double 
+   * @contract <getValue><int> ---> <void>
+   *
    */
-  int getValue();
+  void getValue(int index);
 
   /**-** other members **--**/
 
