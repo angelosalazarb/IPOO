@@ -105,10 +105,10 @@ public:
 
   /**
    * This will search a value in the vector 
-   * @contract <lookUp><> ---> <void>
+   * @contract <lookUp><int> ---> <void>
    * 
    */
-  void lookUp();
+  void lookUp(int value);
 
   /**
    * It will order the vector in ascendent

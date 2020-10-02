@@ -9,6 +9,12 @@ int main() {
 	cin >> size;
 	aVec.setSize(size);
 	aVec.consoleFill();
+	cout<<"-----"<<endl;
 	aVec.sort();
-  
+	cout << endl;
+  cout<<"-----"<<endl;
+	int look;
+	cin>>look;
+
+	aVec.lookUp(look);
 }

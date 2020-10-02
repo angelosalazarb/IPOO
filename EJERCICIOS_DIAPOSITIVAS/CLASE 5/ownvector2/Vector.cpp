@@ -112,6 +112,17 @@ void Vector::sort(){
   }
 }
 
+void Vector::lookUp(int value){
+  int counter = 0;
+  for (int index = 0; index < getSize(); index++){
+    if(buffer[index] == value){
+      cout << index << endl;
+      counter++;
+    }
+  }
+  cout << "El valor esta: " << counter << " veces.";
+}
+
 
 
 
