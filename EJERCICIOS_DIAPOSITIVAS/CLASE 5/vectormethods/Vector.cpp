@@ -56,7 +56,7 @@ void Vector::set(int index,int value){
 void Vector::printVector(){
   cout << "[";
   for (int index = 0; index < getSize(); index++){
-    if(buffer[index+1] < getSize()){
+    if(index+1 < getSize()){
       cout << buffer[index] << ",";
     }
     else{
@@ -121,7 +121,50 @@ void Vector::lookUp(int value){
     }
   }
   cout << "El valor esta: " << counter << " veces.";
+
 }
+
+void Vector::append(int value){
+ if(getSize() > pivot){
+   set(pivot, value);
+   pivot++;
+ }
+ if(getSize() <= pivot){
+   setSize(getSize()+1);
+   set(pivot, value);
+   pivot++;
+ }
+}
+
+void Vector::insert(int index, int value){
+  int aux;
+  int aux2;
+  int aux3;
+    if(index > getSize()-1){
+      setSize(getSize()+1);
+      set(index, value);
+    }
+    else if(index == getSize()-1){
+      aux =  getValue(index);
+      set(index, value);
+      setSize(getSize()+1);
+      set(index+1, aux);
+    }
+    else if(index < getSize()-1){
+      aux = buffer[index];
+      int bufferaux[10000];
+      set(index, value);
+      setSize(getSize()+1);
+      for (int count = index+1; count < getSize(); count++){
+        aux2 =  buffer[count];
+        set(count,aux);
+        set(count+1, aux2);
+      }
+    }
+
+}
+
+
 
 
 

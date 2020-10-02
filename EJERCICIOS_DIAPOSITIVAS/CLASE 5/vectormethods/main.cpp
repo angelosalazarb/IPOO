@@ -13,8 +13,16 @@ int main() {
 	aVec.sort();
 	cout << endl;
   cout<<"-----"<<endl;
-	int look;
-	cin>>look;
-
-	aVec.lookUp(look);
+	aVec.append(6);
+  cout << endl;
+  cout<<"-----"<<endl;
+  aVec.printVector();
+  cout << endl;
+  cout << aVec.getSize();
+  cout<<"-----"<<endl;
+  aVec.insert(3, 100);
+  cout << endl;
+  cout<<"-----"<<endl;
+  aVec.printVector();
+  cout << endl;
 }

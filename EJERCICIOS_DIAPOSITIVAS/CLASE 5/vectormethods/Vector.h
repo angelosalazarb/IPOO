@@ -9,7 +9,7 @@
 #define VECTOR_H_
 
 /**
- * This class define a vector using arrays 
+ * This class define a vector using arrays, and add other methods like sort, append, insert and remove
  */
 class Vector
 {
@@ -116,6 +116,32 @@ public:
    * 
    */
   void order();
+
+  /**
+   * Insert will put a value in a specific position whithout deleting the actual value on it
+   * @contract <insert><int><int> ---> <void>
+   * 
+   * @param index 
+   * @param value 
+   * @return int 
+   */
+  void insert(int index, int value);
+
+  /**
+   * Append will add an element on the last position
+   * @contract <append><int> ---> <void>
+   * 
+   * @param value 
+   * @return int 
+   */
+  void append(int value);
+
+  /**
+   * Remove will delete an element on a specific position
+   * @contract <><> ---> <>
+   * 
+   */
+  void remove();
 };
 
 #endif
