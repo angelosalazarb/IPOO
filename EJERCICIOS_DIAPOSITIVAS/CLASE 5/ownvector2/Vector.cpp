@@ -69,33 +69,46 @@ void Vector::printVector(){
 void Vector::order(){
   int aux;
   for (int index = 0; index < getSize(); index++){
-    for(int i = 1; index < getSize(); i++){
-      if(buffer[i+1] > buffer[i]){
+    for(int i = 0; i < getSize()-1; i++){
+      if(buffer[i] > buffer[i+1]){
         aux = buffer[i];
-        set(i+1, buffer[i+1]);
-        set(i, buffer[aux]);
+        set(i, buffer[i+1]);  
+        set(i+1, aux);
       }
     }
   }
 }
 
 void Vector::sort(){
-  string op;
+  string op = "";
   cin >> op;
 
-  int counter = 0;
+  order();
+
   if(op == "asc"){
-    for(int index = 0; index < getSize(); index++){
-      buffer[index] = buffer[counter];
-      counter++;
+      cout << "[";
+    for (int index = 0; index < getSize(); index++){
+      if(index+1 == getSize()){
+        cout << buffer[index];
+      }
+      else{
+        cout << buffer[index]<< ",";
+      }
     }
+    cout << "]";
   }
 
   else if(op == "desc"){
-    for(int index = getSize()-1; index == 0 ; index--){
-      buffer[index] = buffer[counter];
-      counter++;
+      cout << "[";
+    for (int index = getSize()-1; index >= 0; index--){
+       if(index == 0){
+        cout << buffer[index];
+      }
+      else{
+        cout << buffer[index] << ",";
+      }
     }
+    cout << "]";
   }
 }
 
