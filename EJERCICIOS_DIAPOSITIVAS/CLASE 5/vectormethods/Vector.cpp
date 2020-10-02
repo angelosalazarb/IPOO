@@ -139,7 +139,7 @@ void Vector::append(int value){
 void Vector::insert(int index, int value){
   int aux;
   int aux2;
-  int aux3;
+
     if(index > getSize()-1){
       setSize(getSize()+1);
       set(index, value);
@@ -151,17 +151,25 @@ void Vector::insert(int index, int value){
       set(index+1, aux);
     }
     else if(index < getSize()-1){
-      aux = buffer[index];
-      int bufferaux[10000];
-      set(index, value);
-      setSize(getSize()+1);
-      for (int count = index+1; count < getSize(); count++){
-        aux2 =  buffer[count];
-        set(count,aux);
-        set(count+1, aux2);
-      }
-    }
+      aux = getValue(index);
+      int auxbuff[getSize()];
+      int count1;
+      count1 = 0;
+      int count2;
+      count2 = 0;
 
+      for (int count = index; count < getSize(); count++){
+        auxbuff[count1]=buffer[count];
+        count1++;
+      }
+      setSize(getSize()+1);
+      set(index,value);
+
+      for(int i = index+1; i < getSize(); i++ ){
+        buffer[i] = auxbuff[count2];
+        count2++;
+      }
+   }
 }
 
 
