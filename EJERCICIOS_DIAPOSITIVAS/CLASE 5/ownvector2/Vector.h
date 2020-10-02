@@ -67,10 +67,10 @@ public:
 
   /**
    * Get the Value of the object
-   * @contract <getValue><int> ---> <void>
+   * @contract <getValue><int> ---> <int>
    *
    */
-  void getValue(int index);
+  int getValue(int index);
 
   /**-** other members **--**/
 
@@ -84,7 +84,6 @@ public:
   /**
    * Print the vector 
    * @contract <printVector><> ---> <void>
-   * 
    */
   void printVector();
 
@@ -110,6 +109,13 @@ public:
    * 
    */
   void lookUp();
+
+  /**
+   * It will order the vector in ascendent
+   * @contract <order><> ---> <void>
+   * 
+   */
+  void order();
 };
 
 #endif
