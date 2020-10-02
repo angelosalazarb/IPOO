@@ -138,7 +138,9 @@ void Vector::append(int value){
 
 void Vector::insert(int index, int value){
   int aux;
-  int aux2;
+  int auxbuff[getSize()];
+  int count1;
+  int count2;
 
     if(index > getSize()-1){
       setSize(getSize()+1);
@@ -152,10 +154,7 @@ void Vector::insert(int index, int value){
     }
     else if(index < getSize()-1){
       aux = getValue(index);
-      int auxbuff[getSize()];
-      int count1;
       count1 = 0;
-      int count2;
       count2 = 0;
 
       for (int count = index; count < getSize(); count++){
