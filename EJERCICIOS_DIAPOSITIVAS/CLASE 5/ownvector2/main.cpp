@@ -10,4 +10,5 @@ int main() {
 	aVec.setSize(size);
 	aVec.consoleFill();
 	aVec.sort();
+  
 }
