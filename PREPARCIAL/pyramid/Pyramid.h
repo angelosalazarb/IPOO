@@ -6,6 +6,8 @@
  */
 
 /**This class will calculate the volume of a pyramid**/
+#ifndef PYRAMID_H_
+#define PYRAMID_H_
 
 class Pyramid
 {
@@ -89,3 +91,4 @@ public:
 
 };
 
+#endif
