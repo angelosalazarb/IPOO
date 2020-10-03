@@ -74,6 +74,12 @@ public:
   void consoleFill();
 
   /**
+   * It will fill print the string from the user
+   * @contract <printStr><> ---> <void>
+   */
+  void printStr();
+
+  /**
    * Get the length of the string 
    * @contract <length><> ---> <void>
    */
@@ -86,7 +92,7 @@ public:
    * @param index 
    * @param string 
    */
-  void insert(int index,char char1);
+  void insert(int index,char nStr);
 
   /**
    * 
@@ -94,6 +100,14 @@ public:
    * @param userStr 
    */
   void equal(String userStr);
+
+  /**
+   * It will get a specific char on a position.
+   * @contract <get><int> ---> <void>
+   * 
+   * @param index 
+   */
+  void get(int index);
 
   /**
    * It will sustract 2 strings  
