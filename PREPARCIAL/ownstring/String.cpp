@@ -38,6 +38,7 @@ void String::printStr(){
   for(int index = 0; index < getSize(); index++){
     cout << buffer[index];
   }
+  cout << endl;
 }
 
 void String::length(){
@@ -49,17 +50,31 @@ void String::length(){
 }
 
 void String::insert(int index, char nStr){
-  buffer[index] = nStr;
-}
-
-void String::equal(String userStr){
-
+  buffer[index-1] = nStr;
 }
 
 void String::get(int index){
-  char print = buffer[index];
-  cout << print;
+  char print = buffer[index-1];
+  cout << print <<endl;
 }
+
+
+void String::equal(String userStr){
+  int counter = 0;
+  for(int index = 0; index < getSize(); index++){
+    if(buffer[index] == userStr.buffer[index]){
+      counter++;
+    }
+  }
+  
+  if (counter == getSize()){
+    cout << "true" << endl;
+  }
+  else{
+    cout << "false" << endl;
+  }
+}
+
 
 void String::sustract(){
 
