@@ -81,11 +81,11 @@ public:
 
   /**
    * Get the Volume of the object
-   * @contract <getVolume><> ---> <double>
+   * @contract <getVolume><> ---> <void>
    * 
-   * @return double 
+   * @return void 
    */
-  double getVolume();
+  void getVolume();
 
 };
 
