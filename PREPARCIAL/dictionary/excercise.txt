@@ -1,0 +1,18 @@
+1. Cree su propio TAD diccionario una secuencia ordenada y finita de n objetos llamados componentes.
+    - () representa el diccionario vacio.
+  Los campos del diccionario no pueden ser modificados una vez se han creado y cada campo posee un único valor.
+
+  Ejemplo:
+      ("Equipo":"America de Cali", "jugador": "Andres")
+      ("Jugador":"Luis","Puntuacion":"30")
+  
+  "Jugador" es el nombre del campo y "Luis" el valor que se almacena en ese campo.
+
+Implemente las siguientes operaciones:
+  - Crear diccionario
+  - Consultar el valor almacenado en algún campo del diccionario
+  - Cuantos campos tiene el diccionario
+  - Obtener el valor que tiene asociado algún campo del diccionario
+  - Modificar el valor en algún campo del diccionario
+
+2. Cree un arreglo TAD diccionarios que tenga los siguientes campos nombre, salario y ubicación. Recorra el arreglo y cree las instancias employee.
