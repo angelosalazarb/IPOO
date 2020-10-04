@@ -7,17 +7,7 @@ Dictionary::Dictionary(){
   value  = "";
   stop = "";
 }
-/*
-Dictionary::Dictionary(string nField, string nValue){
-  field = nField ;
-  value  = nValue;
-  for (int index = 0; index < 5; index++){
-    buffer1[index] = field;
-    buffer2[index] = value;
-    components[index] = field + value;
-  }
-}
-*/
+
 Dictionary::~Dictionary(){}
 
 string Dictionary::getField(){
@@ -25,23 +15,37 @@ string Dictionary::getField(){
 }
 
 string Dictionary::getValue(string field){
-  return value;
+  for(int index = 0; buffer1[index] != "~"; index++){
+    if(buffer1[index] == field){
+      cout<< buffer2[index] << endl;
+    }
+  }
+  return "";
+}
+
+void Dictionary::setValue(string field,string nValue){
+  for(int index = 0; buffer1[index] != "~"; index++){
+    if(buffer1[index] == field){
+      buffer2[index] = nValue;
+    }
+  }
 }
 
 void Dictionary::fill(){
   int count = 0;
+
   do{
     cout << "Input field: ";
     cin >> field;
     buffer1[count] = field;
-    
+
     cout << "Input value: ";
     cin >> value;
     buffer2[count] = value;
 
     count++;
 
-    cout << "If u dont want to add more fields type ~ else type *: ";
+    cout << "If u don't want to add more fields type ~ else type *: ";
     cin >> stop;
     if(stop == "~"){
       buffer1[count] = stop;
@@ -58,5 +62,15 @@ void Dictionary::print(){
     else
     cout <<buffer1[index] << ":" << buffer2[index] << ",";
   }
-  cout << ")";
+  cout << ")" << endl;
 }
+
+void Dictionary::fields(){
+  int counter = 0;
+
+  for (int index = 0; buffer1[index] != "~"; index++){
+    counter++;
+  }
+  cout << counter << endl;
+}
+

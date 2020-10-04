@@ -17,10 +17,12 @@ private:
   string field;
   string value;
 
-  string components[10000];
   string buffer1[10000];
   string buffer2[10000];
   string stop;
+
+  void setField(string nField);
+
 
 public:
   /**
@@ -58,9 +60,7 @@ public:
 
   string getValue(string field);
 
-  void setValue(string nValue);
-
-  void setField(string nField);
+  void setValue(string field,string nValue);
 
   /**--** others methods **--**/
 
