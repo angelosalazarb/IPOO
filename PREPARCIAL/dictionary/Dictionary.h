@@ -21,6 +21,12 @@ private:
   string buffer2[10000];
   string stop;
 
+  /**
+   * Set the Field of the object 
+   * @contract <setField><str> ---> <void>
+   * Private because field can  not be changed
+   * @param nField is the new field
+   */
   void setField(string nField);
 
 
@@ -43,7 +49,7 @@ public:
 
   /**
    * Destroy the Dictionary object
-   * @contract <><> ---> <>
+   * @contract <~Dictionary><> ---> <>
    * 
    */
   ~Dictionary();
@@ -51,29 +57,54 @@ public:
   /**--** getters and setter **--**/
 
   /**
-   * Get the Field of the object
-   * @contract <><> ---> <>
+   * Get the Value of the object
+   * @contract <getValue><str> ---> <str>
    * 
+   * @param field 
    * @return string 
    */
-  string getField();
-
   string getValue(string field);
 
+  /**
+   * Set the Value of the object 
+   * @contract <setValue><str><str> ---> <void>
+   * 
+   * @param field 
+   * @param nValue 
+   */
   void setValue(string field,string nValue);
 
   /**--** others methods **--**/
 
+  /**
+   * Get the fields and values giving by the user and save it
+   * @contract <fill><> ---> <void>
+   * 
+   */
   void fill();
 
+  /**
+   * Print the dictionary created by the user
+   * @contract <print><> ---> <void>
+   * 
+   */
   void print();
 
+  /**
+   * Count how many fields are in the dictionary
+   * @contract <fields><> ---> <void>
+   * 
+   */
   void fields();
 
-  void lookUp();
-
-  void setValueInField(string field, string nValue);
-
+  /**
+   * Search for a value in a field and return a boolean;
+   * @contract <isInField><str><str> ---> <void>
+   * 
+   * @param field is the field
+   * @param value is the value for search
+   */
+  void isInField(string field, string value);
 
 };
 

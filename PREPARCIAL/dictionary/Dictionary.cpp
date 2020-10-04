@@ -10,10 +10,6 @@ Dictionary::Dictionary(){
 
 Dictionary::~Dictionary(){}
 
-string Dictionary::getField(){
-  return field;
-}
-
 string Dictionary::getValue(string field){
   for(int index = 0; buffer1[index] != "~"; index++){
     if(buffer1[index] == field){
@@ -74,3 +70,19 @@ void Dictionary::fields(){
   cout << counter << endl;
 }
 
+
+void Dictionary::isInField(string field, string value){
+  string var = "";
+  for(int index = 0; buffer1[index] != "~"; index++){
+    if(buffer2[index] == value){
+      var = "true";
+    }
+  }
+  
+  if(var == "true"){
+    cout << "true" << endl;
+  }
+  else if (var == ""){
+    cout << "false" << endl;
+  }
+}
