@@ -20,6 +20,7 @@ private:
   string components[10000];
   string buffer1[10000];
   string buffer2[10000];
+  string stop;
 
 public:
   /**
@@ -55,13 +56,17 @@ public:
    */
   string getField();
 
-  void setField(string nField);
-
   string getValue(string field);
 
   void setValue(string nValue);
 
+  void setField(string nField);
+
   /**--** others methods **--**/
+
+  void fill();
+
+  void print();
 
   void fields();
 
