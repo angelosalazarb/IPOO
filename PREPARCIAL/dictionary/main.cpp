@@ -10,4 +10,8 @@ int main(){
   obj1.getValue("Puntuacion");
   obj1.setValue("Goles", "150");
   obj1.print();
+
+  Dictionary employee;
+  employee.fill();
+  employee.print();
 }
