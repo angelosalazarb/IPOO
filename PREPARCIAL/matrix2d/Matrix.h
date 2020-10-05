@@ -15,8 +15,7 @@ class Matrix
 private:
   int size;
 
-  double rows[1000];
-  double col[1000];
+  double matrix[10][10];
 
 public:
   /**
@@ -63,10 +62,25 @@ public:
 
   /**--** other methods **--**/
 
+  /**
+   * 
+   * @contract <><> ---> <>
+   * 
+   */
   void printMatrix();
 
+  /**
+   * 
+   * @contract <><> ---> <>
+   * 
+   */
   void consoleFill();
 
+  /**
+   * 
+   * @contract <><> ---> <>
+   * 
+   */
   void determinant();
 
 
