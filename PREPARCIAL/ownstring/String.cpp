@@ -76,6 +76,16 @@ void String::equal(String userStr){
 }
 
 
-void String::sustract(){
+void String::sustract(String userStr){
+  char auxbuffer[getSize()];
+  int counter = 0;
+  for (int index = 0; index < getSize(); index++){
+    if(buffer[index] != userStr.buffer[index]){
+      auxbuffer[counter] = buffer[index];
+      cout << auxbuffer[counter];
+      counter++;
+    }
+  }
+
 
 }

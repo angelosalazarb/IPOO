@@ -114,7 +114,7 @@ public:
    * @contract <sustract><> ---> <void>
    * 
    */
-  void sustract();
+  void sustract(string userStr);
 
 
 };

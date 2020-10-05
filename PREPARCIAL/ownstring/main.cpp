@@ -10,13 +10,12 @@ int main(){
   aStr.setSize(size);
   aStr.consoleFill();
   aStr.get(2);
-  /**aStr.insert(2,'b');*/
   aStr.printStr();
-  aStr.length();
   
   String oStr;
   oStr.setSize(size);
   oStr.consoleFill();
-  oStr.equal(aStr);
+  /**oStr.equal(aStr);*/
+  oStr.sustract(aStr);
   
 }
