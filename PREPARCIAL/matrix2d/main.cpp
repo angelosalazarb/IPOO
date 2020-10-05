@@ -7,5 +7,6 @@ int main(){
 
   aMatrix.consoleFill();
   aMatrix.printMatrix();
+  cout << aMatrix.determinant2x2() << endl;
 
 }

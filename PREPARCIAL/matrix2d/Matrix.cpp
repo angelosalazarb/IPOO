@@ -36,7 +36,7 @@ void Matrix::setSize(int nSize){
 
 void Matrix::consoleFill(){
 
-  int value;
+  double value;
   
 
   for (int indexr = 0; indexr < size; indexr++){
@@ -58,6 +58,14 @@ void Matrix::printMatrix(){
   }
 }
 
-void Matrix::determinant(){
-  
+double Matrix::determinant2x2(){
+  double firstTerm;
+  double secondTerm;
+  double result;
+
+  firstTerm = matrix[0][0]*matrix[1][1];
+  secondTerm = matrix[0][1]*matrix[1][0];
+  result = firstTerm - secondTerm;
+
+  return result;
 }

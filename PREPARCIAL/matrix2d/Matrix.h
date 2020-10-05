@@ -63,25 +63,26 @@ public:
   /**--** other methods **--**/
 
   /**
-   * 
-   * @contract <><> ---> <>
+   * Print the matrix
+   * @contract <printMatrix><> ---> <>
    * 
    */
   void printMatrix();
 
   /**
-   * 
-   * @contract <><> ---> <>
+   * Fill the matrix
+   * @contract <consoleFill><> ---> <>
    * 
    */
   void consoleFill();
 
   /**
+   * Get the determinant of a 2x2 matrix
+   * @contract <determinant2x2><> ---> <double>
    * 
-   * @contract <><> ---> <>
-   * 
+   * @return double 
    */
-  void determinant();
+  double determinant2x2();
 
 
 };
