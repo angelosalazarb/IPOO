@@ -7,6 +7,7 @@
 
 #ifndef VECTOR2D_H_
 #define VECTOR2D_H_
+#include "Matrix.h"
 
 class Vector2d
 {
@@ -17,23 +18,23 @@ private:
 
 public:
   /**
-   * Construct a new Matrix object
-   * @contract <Matrix><> ---> <obj>
+   * Construct a new Vector2d object
+   * @contract <Vector2d><> ---> <obj>
    * 
    */
   Vector2d();
 
   /**
-   * Construct a new Matrix object
-   * @contract <Matrix><int> ---> <obj>
+   * Construct a new Vector2d object
+   * @contract <Vector2d><int> ---> <obj>
    * 
    * @param size 
    */
   Vector2d(int nSize);
 
   /**
-   * Destroy the Matrix object
-   * @contract <~Matrix><> ---> <>
+   * Destroy the Vector2d object
+   * @contract <~Vector2d><> ---> <>
    * 
    */
   ~Vector2d();
@@ -57,22 +58,37 @@ public:
    */
   void setSize(int nSize);
 
-
+  /**
+   * Get the Position of the vector
+   * @contract <getPosition><int> ---> <>
+   * 
+   * @return double 
+   */
+  double getPosition(int pos);
   /**--** other methods **--**/
 
   /**
-   * Print the matrix
-   * @contract <printMatrix><> ---> <>
+   * Print the Vector2d
+   * @contract <printVector<> ---> <>
    * 
    */
   void printVector();
 
   /**
-   * Fill the matrix
+   * Fill the Vector2d
    * @contract <consoleFill><> ---> <>
    * 
    */
   void consoleFill();
+
+  /**
+   * Solve an equations system
+   * @contract <solve><> ---> <void>
+   * 
+   */
+  void solve(Vector2d aVec, Matrix aMat);
+
+
 
 };
 

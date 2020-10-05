@@ -27,6 +27,13 @@ public:
 
   /**
    * Construct a new Matrix object
+   * @contract <Matrix><> ---> <obj>
+   * 
+   */
+  Matrix(double aMat[2][2]);
+
+  /**
+   * Construct a new Matrix object
    * @contract <Matrix><int> ---> <obj>
    * 
    * @param size 
@@ -83,6 +90,24 @@ public:
    * @return double 
    */
   double determinant2x2();
+
+ 
+  /**
+  * Get the Position of the object
+  * @contract <getPosition><int><int> ---> <void>
+  * 
+  * @param indexr is the position in row
+  * @param indexc is the position in column
+  */
+  double getPosition(int indexr, int indexc);
+
+  /**
+   * 
+   * @contract <><> ---> <>
+   * 
+   * @param aMat 
+   */
+  double determinantByMat(Matrix aMat);
 
 
 };

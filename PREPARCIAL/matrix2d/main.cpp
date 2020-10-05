@@ -14,5 +14,5 @@ int main(){
 
   aVector.consoleFill();
   aVector.printVector();
-
+  aVector.solve(aVector, aMatrix);
 }

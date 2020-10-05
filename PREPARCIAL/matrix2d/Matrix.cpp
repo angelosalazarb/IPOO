@@ -13,6 +13,17 @@ Matrix::Matrix(){
   }
 }
 
+Matrix::Matrix(double aMat[2][2]){
+  size = 2;
+
+
+  for (int indexr = 0; indexr < size; indexr++){
+    for(int indexc = 0; indexc < size; indexc++){
+      matrix[indexr][indexc] = aMat[indexr][indexc];
+    }
+  }
+}
+
 Matrix::Matrix(int nSize){
   size = nSize;
 
@@ -65,6 +76,24 @@ double Matrix::determinant2x2(){
 
   firstTerm = matrix[0][0]*matrix[1][1];
   secondTerm = matrix[0][1]*matrix[1][0];
+  result = firstTerm - secondTerm;
+
+  return result;
+}
+
+double Matrix::getPosition(int indexr, int indexc){
+  double value;
+  value =  matrix[indexr][indexc];
+  return value;
+}
+
+double Matrix::determinantByMat(Matrix aMat){
+  double firstTerm;
+  double secondTerm;
+  double result;
+
+  firstTerm = aMat.getPosition(0,0)*aMat.getPosition(1,1);
+  secondTerm = aMat.getPosition(0,1)*aMat.getPosition(1,0);
   result = firstTerm - secondTerm;
 
   return result;
