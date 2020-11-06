@@ -4,9 +4,9 @@ using namespace std;
 
 int main() {
 	Vector aVec;
-
-	aVec.append(1);
-	aVec.append(2);
-	aVec.append(3);
+	int size;
+	cin >> size;
+	aVec.setSize(size);
+	aVec.consoleFill();
 	aVec.printVector();	
 }

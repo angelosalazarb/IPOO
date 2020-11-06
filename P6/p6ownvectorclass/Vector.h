@@ -13,8 +13,9 @@
 class Vector
 {
 private:
+  int capacity;
   int size;
-  int *buffer;
+  int *buffer =  new int[capacity];
 
 public:
   /**
@@ -30,7 +31,7 @@ public:
    * @param nSize is the new size
    * @param fill  are the values on the vector 
    */
-  Vector(int nSize, double fill);
+  Vector(int nSize, int fill);
 
   /**
    * Construct a new Vector object

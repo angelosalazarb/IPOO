@@ -4,20 +4,27 @@
 using namespace std;
 
 Vector::Vector(){
-  size = 1;
-  buffer = new int[size];
+  capacity = 10;
+  size = 0;
+  int *buffer = new int[capacity];
 
-  for (int index = 0; index < size; index++){buffer[index] = 0;}
+  for (int index = 0; index < capacity; index++){buffer[size++] = 0;}
 }
 
 Vector::Vector(int nSize){
-  size = nSize;
-  for (int index = 0; index < nSize; index++){buffer[index] = 0; size++;}
+capacity = 10;
+size = nSize;
+int *buffer = new int[capacity];
+
+for (int count = nSize; count >= capacity; count--){buffer[size++] = 0;}
 }
 
-Vector::Vector(int nSize, double fill){
-  size = nSize;
-  for (int count = nSize; count >= 0; count--){buffer[count] = fill;}
+Vector::Vector(int nSize, int fill){
+capacity = nSize;
+size = 0;
+buffer = new int[capacity];
+
+for (int count = nSize; count >= capacity; count--){buffer[size++] = fill;}
 }
 
 Vector::~Vector(){
@@ -38,9 +45,29 @@ void Vector::setSize(int nSize){
 
 void Vector::consoleFill(){
   int value;
+  if (size < capacity){
   for(int index = 0; index < getSize(); index++){
     cin >> value;
     buffer[index] = value;
+    }
+  }
+  else{
+    capacity *= 2; //Multiplies the capacity by two
+
+    int *tempBuffer = new int[capacity];
+
+    for (int index = 0; index < size; index++){
+      tempBuffer[index] = buffer[index];
+    }
+
+    delete []buffer;
+
+    buffer = tempBuffer; 
+
+    for(int index = 0; index < getSize(); index++){
+    cin >> value;
+    buffer[index] = value;
+    }   
   }
 }
 
