@@ -79,13 +79,14 @@ void Vector::printVector(){
 
 void Vector::set(int index, double value){
   buffer[index] = value;
-  size++;
 }
 
 void Vector::append(int value){
   
   if (size < capacity){
   set(size,value);
+  size++;
+
   }
 
   else{
@@ -102,6 +103,8 @@ void Vector::append(int value){
     buffer = tempBuffer; 
 
     set(size, value);
+    size++;
+
   }
 }
 
