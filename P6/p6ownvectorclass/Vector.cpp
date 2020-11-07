@@ -8,11 +8,11 @@ Vector::Vector(){
   size = 0;
   int *buffer = new int[capacity];
 
-  for (int index = 0; index < capacity; index++){buffer[size++] = 0;}
+  /**for (int index = 0; index < capacity; index++){buffer[size++] = 0;}*/
 }
 
 Vector::Vector(int nSize){
-capacity = 10;
+capacity = 5;
 size = nSize;
 int *buffer = new int[capacity];
 
@@ -20,7 +20,7 @@ for (int count = nSize; count >= capacity; count--){buffer[size++] = 0;}
 }
 
 Vector::Vector(int nSize, int fill){
-capacity = nSize;
+capacity = 5;
 size = 0;
 buffer = new int[capacity];
 
@@ -79,13 +79,30 @@ void Vector::printVector(){
 
 void Vector::set(int index, double value){
   buffer[index] = value;
+  size++;
 }
 
 void Vector::append(int value){
   
-  set(size-1,value);
-  size++;
-  
+  if (size < capacity){
+  set(size,value);
+  }
+
+  else{
+    capacity *= 2; //Multiplies the capacity by two
+
+    int *tempBuffer = new int[capacity];
+
+    for (int index = 0; index < size; index++){
+      tempBuffer[index] = buffer[index];
+    }
+
+    delete []buffer;
+
+    buffer = tempBuffer; 
+
+    set(size, value);
+  }
 }
 
 void Vector::remove(int index){
@@ -143,6 +160,3 @@ void Vector::path(){
   }
 }
 
-void Vector::lookUp(int value){
-
-}
