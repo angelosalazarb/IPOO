@@ -4,27 +4,27 @@
 using namespace std;
 
 Vector::Vector(){
-  capacity = 10;
-  size = 0;
+  this -> capacity = 10;
+  this -> size = 0;
   int *buffer = new int[capacity];
 
   /**for (int index = 0; index < capacity; index++){buffer[size++] = 0;}*/
 }
 
-Vector::Vector(int nSize){
-capacity = 5;
-size = nSize;
+Vector::Vector(int size){
+this -> capacity = 5;
+this -> size = size ;
 int *buffer = new int[capacity];
 
-for (int count = nSize; count >= capacity; count--){buffer[size++] = 0;}
+for (int count = size; count >= capacity; count--){buffer[size++] = 0;}
 }
 
-Vector::Vector(int nSize, int fill){
-capacity = 5;
-size = 0;
+Vector::Vector(int size, int fill){
+this -> capacity = 5;
+this -> size = size ;
 buffer = new int[capacity];
 
-for (int count = nSize; count >= capacity; count--){buffer[size++] = fill;}
+for (int count = size; count >= capacity; count--){buffer[size++] = fill;}
 }
 
 Vector::~Vector(){
@@ -32,7 +32,7 @@ Vector::~Vector(){
 }
 
 int Vector::getSize(){
-  return size;
+  return this -> size;
 }
 
 int Vector::getValue(int index){
@@ -40,19 +40,19 @@ int Vector::getValue(int index){
 }
 
 void Vector::setSize(int nSize){
-  size = nSize;
+  this -> size = nSize;
 }
 
 void Vector::consoleFill(){
   int value;
-  if (size < capacity){
+  if (this -> size < this -> capacity){
   for(int index = 0; index < getSize(); index++){
     cin >> value;
     buffer[index] = value;
     }
   }
   else{
-    capacity *= 2; //Multiplies the capacity by two
+    this -> capacity *= 2; //Multiplies the capacity by two
 
     int *tempBuffer = new int[capacity];
 
@@ -82,19 +82,19 @@ void Vector::set(int index, double value){
 }
 
 void Vector::append(int value){
-  
-  if (size < capacity){
-  set(size,value);
+
+  if (this -> size < this -> capacity){
+  set(this -> size,value);
   size++;
 
   }
 
   else{
-    capacity *= 2; //Multiplies the capacity by two
+    this -> capacity *= 2; //Multiplies the capacity by two
 
     int *tempBuffer = new int[capacity];
 
-    for (int index = 0; index < size; index++){
+    for (int index = 0; index < this -> size; index++){
       tempBuffer[index] = buffer[index];
     }
 
@@ -102,7 +102,7 @@ void Vector::append(int value){
 
     buffer = tempBuffer; 
 
-    set(size, value);
+    set(this -> size, value);
     size++;
 
   }
