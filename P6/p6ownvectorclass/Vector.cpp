@@ -44,11 +44,18 @@ void Vector::setSize(int nSize){
 }
 
 void Vector::consoleFill(){
+  try{
   int value;
-  if (this -> size < this -> capacity){
+  if (size < capacity){
   for(int index = 0; index < getSize(); index++){
+
     cin >> value;
-    buffer[index] = value;
+
+    if(cin.fail()){
+      throw "Dato invalido, digite un entero.";
+    }else{
+      buffer[index] = value;
+      }
     }
   }
   else{
@@ -65,10 +72,23 @@ void Vector::consoleFill(){
     buffer = tempBuffer; 
 
     for(int index = 0; index < getSize(); index++){
+    
     cin >> value;
-    buffer[index] = value;
+
+    if(cin.fail()){
+      throw "Dato invalido, digite un entero.";
+    }else{
+      buffer[index] = value;
+      }
     }   
   }
+  }
+
+  catch(char const *error){
+		cout << error << endl;
+    abort();
+	}
+
 }
 
 void Vector::printVector(){
@@ -82,8 +102,7 @@ void Vector::set(int index, double value){
 }
 
 void Vector::append(int value){
-
-  if (this -> size < this -> capacity){
+  if (size < capacity){
   set(this -> size,value);
   size++;
 
@@ -104,7 +123,6 @@ void Vector::append(int value){
 
     set(this -> size, value);
     size++;
-
   }
 }
 
@@ -127,26 +145,58 @@ void Vector::sort(){
   string op = "";
   cin >> op;
 
-  path();
+  try{
+    if(cin.fail()){
+      throw "Entrada invalida, digite asc para ascendente y desc para descendente.";
+    }
+    else{
+      
+      path();
 
-  if(op == "asc"){
-    ascendent();
+      if(op == "asc"){
+        ascendent();
+      }
+      else if( op == "desc"){
+        descendent();
+      }
+    }
   }
-  else if( op == "desc"){
-    descendent();
+  catch(char const *error){
+    cout << error << endl;
+    abort();
   }
 }
 
 void Vector::ascendent(){
+  int *tempBuffer = new int[capacity];
+  int count2 = 0;
  for(int count = 0; count < getSize(); count++){
-   cout << buffer[count] << endl;
+  
+  tempBuffer[count2] = buffer[count];
+  count2++;
+  cout << buffer[count] << endl;
+  
  }
+
+ delete []buffer;
+ buffer = tempBuffer;
+
 }
 
 void Vector::descendent(){
+  int *tempBuffer = new int[capacity];
+  int count2 = 0;
  for(int count = getSize()-1; count >= 0; count--){
-   cout << buffer[count] << endl;
+
+  tempBuffer[count2] = buffer[count];
+  count2++;
+  cout << buffer[count] << endl;
+
  }
+
+ delete []buffer;
+ buffer = tempBuffer;
+
 }
 
 void Vector::path(){
