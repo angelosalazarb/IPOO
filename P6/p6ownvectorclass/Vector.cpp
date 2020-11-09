@@ -47,14 +47,14 @@ void Vector::consoleFill(){
   try{
   int value;
   if (size < capacity){
-  for(int index = 0; index < getSize(); index++){
+  for(int index = 0; index < capacity; index++){
 
     cin >> value;
 
     if(cin.fail()){
       throw "Dato invalido, digite un entero.";
     }else{
-      buffer[index] = value;
+      buffer[size++] = value;
       }
     }
   }
@@ -71,22 +71,22 @@ void Vector::consoleFill(){
 
     buffer = tempBuffer; 
 
-    for(int index = 0; index < getSize(); index++){
+    for(int index = 0; index < capacity; index++){
     
     cin >> value;
 
     if(cin.fail()){
       throw "Dato invalido, digite un entero.";
     }else{
-      buffer[index] = value;
+      buffer[size++] = value;
       }
     }   
   }
   }
 
   catch(char const *error){
-		cout << error << endl;
-    abort();
+		//*cout << error << endl;*/
+    cin.clear();
 	}
 
 }
@@ -159,6 +159,9 @@ void Vector::sort(){
       else if( op == "desc"){
         descendent();
       }
+      else{
+        cout << "Entrada invalida, digite asc para ascendente y desc para descendente." << endl;
+      }
     }
   }
   catch(char const *error){
@@ -175,7 +178,7 @@ void Vector::ascendent(){
   tempBuffer[count2] = buffer[count];
   count2++;
   cout << buffer[count] << endl;
-  
+
  }
 
  delete []buffer;
