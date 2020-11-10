@@ -23,7 +23,7 @@ class Complex{
 
   Complex();
   Complex(int imag, int real);
-  Complex(Complex, Complex);
+  Complex(Complex aComplex, Complex bComplex);
 
   /**
    * Get the Imaginary of the complex
@@ -37,7 +37,7 @@ class Complex{
    * @contract <setImag><int> ---> <void>
    * 
    */
-  void setImag(int);
+  void setImag(int imag);
 
   /**
    * Get the Real of the complex
@@ -53,7 +53,7 @@ class Complex{
    * 
    * @return void 
    */
-  void setReal(int);
+  void setReal(int real);
 
   /**
    * Get the Complex number
@@ -62,7 +62,7 @@ class Complex{
    * @param real 
    * @param imag 
    */
-  void getComplex(int real, int imag);
+  void getComplex();
 
   /**
    * Overload operator +
