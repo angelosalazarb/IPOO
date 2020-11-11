@@ -7,7 +7,7 @@ Complex::Complex(){
   this-> op = '+';
 }
 
-Complex::Complex(int imag, int real){
+Complex::Complex(int real, int imag){
   this-> real = real;
   this-> imag = imag;
   this-> op = '+';
@@ -108,9 +108,15 @@ Complex& Complex::operator*(int value){
 }
 
 Complex& Complex::operator*(Complex aComplex){
-  this->real *= aComplex.getReal();
-  this->imag *= aComplex.getImag();
+  int tempImag;
+  int tempReal;
 
+  tempReal = ((this-> real * aComplex.getReal()) - (this->imag * aComplex.getImag()));
+  tempImag = ((this->real * aComplex.getImag()) + (this->imag * aComplex.getReal()));
+
+  this->real *= tempReal;
+  this->imag *= tempImag;
+  
   if (imag >= 0){
     this-> op = '+';
   }else{
