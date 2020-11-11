@@ -69,42 +69,42 @@ class Complex{
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator+(int);
+  Complex& operator+(int value);
 
   /**
    * Overload operator +
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator+(Complex);
+  Complex& operator+(Complex aComplex);
   
   /**
    * Overload operator -
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator-(int);
+  Complex& operator-(int value);
 
   /**
    * Overload operator -
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator-(Complex);
+  Complex& operator-(Complex aComplex);
 
   /**
    * Overload operator *
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator*(int);
+  Complex& operator*(int value);
 
   /**
    * Overload operator *
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator*(Complex);
+  Complex& operator*(Complex aComplex);
 
 
 };

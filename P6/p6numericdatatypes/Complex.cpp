@@ -4,6 +4,7 @@
 Complex::Complex(){
   this-> real = 0;
   this-> imag = 0;
+  this-> op = '+';
 }
 
 Complex::Complex(int imag, int real){
@@ -39,7 +40,39 @@ void Complex::setImag(int imag){
   this->imag = imag;  
 }
 
-void Complex::getComplex(){
-
+void Complex::getComplex(){ 
+  std::cout << getReal() << " " << this-> op <<  " " << getImag() << "i" << std::endl;
 }
 
+Complex& Complex::operator+(int value){
+  this->real += value;
+  return *this;
+}
+
+Complex& Complex::operator+(Complex aComplex){
+  this->real += aComplex.getReal();
+  this->imag += aComplex.getImag();
+  return *this;
+}
+
+Complex& Complex::operator-(int value){
+  this->real -= value;
+  return *this;
+}
+
+Complex& Complex::operator-(Complex aComplex){
+  this->real -= aComplex.getReal();
+  this->imag -= aComplex.getImag();
+  return *this;
+}
+
+Complex& Complex::operator*(int value){
+  this->real *= value;
+  return *this;
+}
+
+Complex& Complex::operator*(Complex aComplex){
+  this->real *= aComplex.getReal();
+  this->imag *= aComplex.getImag();
+  return *this;
+}
