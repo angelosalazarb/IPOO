@@ -21,9 +21,37 @@ class Complex{
 
   public:
 
+  /**
+   * Construct a new Complex object
+   * @contract <Complex><> ---> <obj>
+   * @see Complex(int imag, int real);
+   */
   Complex();
+
+  /**
+   * Construct a new Complex object
+   * @contract <Complex><int><real> ---> <Obj>
+   * 
+   * @param imag 
+   * @param real 
+   */
   Complex(int imag, int real);
+
+  /**
+   * Construct a new Complex object
+   * @contract <Complex><Complex><Complex> ---> <obj>
+   * 
+   * @param aComplex 
+   * @param bComplex 
+   */
   Complex(Complex aComplex, Complex bComplex);
+
+  /**
+   * Destroy the Complex object
+   * @contract <~Complex><> ---> <>
+   * 
+   */
+  ~Complex();
 
   /**
    * Get the Imaginary of the complex
