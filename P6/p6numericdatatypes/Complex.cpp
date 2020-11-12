@@ -49,6 +49,7 @@ void Complex::getComplex(){
 
 Complex& Complex::operator+(int value){
   this->real += value;
+  
   if (imag >= 0){
     this-> op = '+';
   }else{
@@ -114,8 +115,8 @@ Complex& Complex::operator*(Complex aComplex){
   tempReal = ((this-> real * aComplex.getReal()) - (this->imag * aComplex.getImag()));
   tempImag = ((this->real * aComplex.getImag()) + (this->imag * aComplex.getReal()));
 
-  this->real *= tempReal;
-  this->imag *= tempImag;
+  this->real = tempReal;
+  this->imag = tempImag;
   
   if (imag >= 0){
     this-> op = '+';
