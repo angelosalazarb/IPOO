@@ -43,9 +43,9 @@ class Complex{
    * 
    * @param aComplex 
    * @param bComplex 
-   */
+   
   Complex(Complex aComplex, Complex bComplex);
-
+  */
   /**
    * Destroy the Complex object
    * @contract <~Complex><> ---> <>
@@ -104,35 +104,35 @@ class Complex{
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator+(Complex aComplex);
+  Complex operator+(const Complex& aComplex);
   
   /**
    * Overload operator -
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator-(int value);
+  Complex operator-(int value);
 
   /**
    * Overload operator -
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator-(Complex aComplex);
+  Complex& operator-(Complex& aComplex);
+  
+  /** 
+   * Overload operator *
+   * @contract <operator+><Complex> ---> <Complex>
+   * @return Complex& 
+   */
+  Complex operator*(int value);
 
   /**
    * Overload operator *
    * @contract <operator+><Complex> ---> <Complex>
    * @return Complex& 
    */
-  Complex& operator*(int value);
-
-  /**
-   * Overload operator *
-   * @contract <operator+><Complex> ---> <Complex>
-   * @return Complex& 
-   */
-  Complex& operator*(Complex aComplex);
+  Complex operator*(Complex aComplex);
 
 
 };

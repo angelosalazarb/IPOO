@@ -12,7 +12,7 @@ Complex::Complex(int real, int imag){
   this-> imag = imag;
   this-> op = '+';
 }
-
+/*
 Complex::Complex(Complex aComplex, Complex bComplex){
   this-> op = '+';
   this->real = aComplex.getReal();
@@ -22,7 +22,7 @@ Complex::Complex(Complex aComplex, Complex bComplex){
   bReal = bComplex.getReal();
   bImag = aComplex.getImag();
 }
-
+*/
 Complex::~Complex(){
 
 }
@@ -35,12 +35,12 @@ int Complex::getImag(){
   return this->imag;
 }
 
-void Complex::setReal(int real){
-  this->real = real;  
+void Complex::setReal(int nreal){
+  real = nreal;  
 }
 
-void Complex::setImag(int imag){
-  this->imag = imag;  
+void Complex::setImag(int nimag){
+  imag = nimag;  
 }
 
 void Complex::getComplex(){ 
@@ -58,9 +58,10 @@ Complex& Complex::operator+(int value){
   return *this;
 }
 
-Complex& Complex::operator+(Complex aComplex){
-  this->real += aComplex.getReal();
-  this->imag += aComplex.getImag();
+Complex Complex::operator+(const Complex& aComplex){
+  Complex  bComplex;
+  bComplex.real += this-> real + aComplex.real;
+  bComplex.imag += this-> imag + aComplex.imag;
 
   if (imag >= 0){
     this-> op = '+';
@@ -68,11 +69,13 @@ Complex& Complex::operator+(Complex aComplex){
     this-> op = '-';
   }
 
-  return *this;
+  return bComplex;
 }
 
-Complex& Complex::operator-(int value){
-  this->real -= value;
+Complex Complex::operator-(int value){
+  Complex aComplex;
+  aComplex.real = value - real;
+  aComplex.imag = imag;
 
   if (imag >= 0){
     this-> op = '+';
@@ -80,11 +83,11 @@ Complex& Complex::operator-(int value){
     this-> op = '-';
   }
 
-  return *this;
+  return aComplex;
 }
 
-Complex& Complex::operator-(Complex aComplex){
-  this->real -= aComplex.getReal();
+Complex& Complex::operator-(Complex& aComplex){
+  this->real -= aComplex.getReal(); 
   this->imag -= aComplex.getImag();
   
   if (imag >= 0){
@@ -96,7 +99,7 @@ Complex& Complex::operator-(Complex aComplex){
   return *this;
 }
 
-Complex& Complex::operator*(int value){
+Complex Complex::operator*(int value){
   this->real *= value;
 
   if (imag >= 0){
@@ -108,7 +111,7 @@ Complex& Complex::operator*(int value){
   return *this;
 }
 
-Complex& Complex::operator*(Complex aComplex){
+Complex Complex::operator*(Complex aComplex){
   int tempImag;
   int tempReal;
 
