@@ -18,6 +18,11 @@ Fraction::Fraction(Fraction& aFraction){
   this-> denominator = aFraction.getDenominator();
 }
 
+Fraction::Fraction(const Fraction& aFraction){
+  this-> numerator = aFraction.numerator;
+  this-> denominator = aFraction.denominator;
+}
+
 Fraction::~Fraction(){}
 
 int Fraction::getNumerator(){
@@ -38,4 +43,69 @@ void Fraction::setDenominator(int denominator){
 
 void Fraction::getFraction(){
   std::cout << getNumerator() << " / " << getDenominator() << std::endl;
+}
+
+Fraction& Fraction::operator+(int value){
+  int tempNumerator;
+  tempNumerator = numerator  + (this-> denominator * value);
+
+  this->numerator = tempNumerator;
+  this->denominator = denominator;
+
+  return *this;
+}
+
+Fraction Fraction::operator+(const Fraction& aFraction){
+ Fraction bFraction;
+
+ bFraction.numerator = (aFraction.denominator * this-> numerator) + (aFraction.numerator * this-> denominator);
+ bFraction.denominator = aFraction.denominator * this-> denominator;
+
+ return bFraction; 
+}
+
+Fraction& Fraction::operator-(int value){
+  int tempNumerator;
+  tempNumerator = numerator  - (this-> denominator * value);
+
+  this->numerator = tempNumerator;
+  this->denominator = denominator;
+
+  return *this;
+}
+
+Fraction Fraction::operator-(const Fraction& aFraction){
+ Fraction bFraction;
+
+ bFraction.numerator = (aFraction.denominator * this-> numerator) - (aFraction.numerator * this-> denominator);
+ bFraction.denominator = aFraction.denominator * this-> denominator;
+
+ return bFraction; 
+}
+
+Fraction Fraction::operator/(const Fraction& aFraction){
+ Fraction bFraction;
+
+ bFraction.numerator = (aFraction.denominator * this-> numerator);
+ bFraction.denominator = (aFraction.numerator * this-> denominator);
+
+ return bFraction; 
+}
+
+Fraction& Fraction::operator*(int value){
+
+  this->numerator *= value;
+  this->denominator = denominator;
+
+  return *this;
+
+}
+
+Fraction Fraction::operator*(const Fraction& aFraction){
+ Fraction bFraction;
+
+ bFraction.numerator = (aFraction.numerator * this-> numerator);
+ bFraction.denominator = (aFraction.denominator * this-> denominator);
+
+ return bFraction; 
 }

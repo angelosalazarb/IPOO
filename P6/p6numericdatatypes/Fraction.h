@@ -41,6 +41,14 @@ class Fraction{
     Fraction(Fraction& aFraction);
 
     /**
+     * Construct a new Fraction object
+     * @contract <Fraction><const> ---> <obj>
+     * 
+     * @param aFraction 
+     */
+    Fraction(const Fraction& aFraction);
+
+    /**
      * Destroy the Fraction object
      * @contract <~Fraction><> ---> <obj>
      * 
@@ -72,7 +80,7 @@ class Fraction{
      * @contract <operator+><Fraction> ---> <Fraction>
      * @return Fraction& 
      */
-    Fraction& operator+(Fraction aFraction);
+    Fraction operator+(const Fraction& aFraction);
 
     /**
      * Overload operator *
@@ -86,7 +94,7 @@ class Fraction{
      * @contract <operator-><Fraction> ---> <Fraction>
      * @return Fraction& 
      */
-    Fraction& operator-(Fraction aFraction);
+    Fraction operator-(const Fraction& aFraction);
     
     /**
      * Overload operator *
@@ -100,6 +108,13 @@ class Fraction{
      * @contract <operator*><Fraction> ---> <Fraction>
      * @return Fraction& 
      */
-    Fraction& operator*(Fraction aFraction);
+    Fraction operator*(const Fraction& aFraction);
+
+    /**
+     * Overload operator /
+     * @contract <operator/><Fraction> ---> <Fraction>
+     * @return Fraction& 
+     */
+    Fraction operator/(const Fraction& aFraction);
 };
 #endif
