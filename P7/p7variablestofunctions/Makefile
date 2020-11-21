@@ -1,13 +1,10 @@
-CXX = g++
-CFLAGS = -std=c++11 -Wdeprecated
+CXX=g++
 
 all: build
 
 build:
- $(CXX) $(CFLAGS) -o main main.cpp src/Functions.cpp
+	$(CXX) -std=c++11 -o main main.cpp src/Functions.cpp
 
-run: 
+run:
 	@./main
 
-doc:
-	doxygen
