@@ -1,4 +1,4 @@
-#include "header/Dog.h"
+#include "../header/Dog.h"
 
 Dog::Dog(){
   this-> breed = "";
@@ -6,6 +6,16 @@ Dog::Dog(){
   this-> bark = "";
   this-> size = "";
   this-> age = 0;
+}
+
+
+Dog::Dog(string name){
+  this-> name = name;
+}
+
+Dog::Dog(string name, string breed){
+  this-> breed = breed;
+  this-> name = name;
 }
 
 Dog::Dog(string breed, string name, string bark, string size, int age){

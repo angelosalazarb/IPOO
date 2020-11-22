@@ -6,24 +6,42 @@
  */
 #ifndef DOG_H_
 #define DOG_H_
-#include "header/Animal.h"
+#include "../header/Animal.h"
 #include <string>
 using namespace std;
 
 class Dog: public Animal{
   private:
-    string size,breed, name, bark;
-    int age;
+   
 
-    /**
+  public:
+     /**
      * Construct a new Dog Animal
      * @contract <Dog><> ---> <obj>
      * @see Dog(str, str, str)
      **/
     Dog();
 
-  public:
+    string size,breed, name, bark;
+    int age;
      
+     /**
+     * Construct a new Dog object}
+     * @contract <Dog><str> ---> <obj>
+     * 
+     * @param  name
+     **/
+    Dog(string name);
+
+    /**
+     * Construct a new Dog object}
+     * @contract <Dog><str><str><str> ---> <obj>
+     * 
+     * @param  name
+     * @param  breed
+     **/
+    Dog(string name, string breed);
+
     /**
      * Construct a new Dog object}
      * @contract <Dog><str><str><str> ---> <obj>
@@ -31,6 +49,8 @@ class Dog: public Animal{
      * @param breed 
      * @param name 
      * @param age 
+     * @param size
+     * @param bark
      **/
     Dog(string breed, string name, string size, string bark, int age);
 

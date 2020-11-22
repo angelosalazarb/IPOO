@@ -7,7 +7,7 @@
 #ifndef CHIHUAHUA_H_
 #define CHIHUAHUA_H_
 
-#include "header/Dog.h"
+#include "../header/Dog.h"
 #include <string>
 using namespace std;
 
@@ -26,17 +26,49 @@ class Chihuahua:public Dog{
   
   /**
    * Construct a new Chihuahua object
-   * @contract <><> ---> <>
+   * @contract <Chihuahua><str> ---> <obj>
    * 
    * @param name 
    **/
   Chihuahua(string name);
 
+  /**
+   * Construct a new Chihuahua object
+   * @contract <Chihuahua><str> ---> <obj>
+   * 
+   * @param name 
+   **/
+  Chihuahua(string name, string type);
+
+  /**
+   * Construct a new Chihuahua object
+   * @contract <Chihuahua><str><str><int> ---> <obj>
+   * 
+   * @param name 
+   * @param type 
+   * @param age 
+   **/
   Chihuahua(string name, string type, int age);
 
   ~Chihuahua();
 
   /**--** getters and setters **-**/
+
+  /**
+   * Get the Type of the chihuahua
+   * @contract <getType><void> ---> <string>
+   * 
+   * @return string 
+   **/
+  string getType();
+
+  /**
+   * Set the Type of the chihuahua
+   * @contract <setType><str> ---> <void>
+   * 
+   * @param nType 
+   **/
+  void setType(string nType);
 
 };
 #endif 
