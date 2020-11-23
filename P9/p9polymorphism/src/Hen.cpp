@@ -1,58 +1,58 @@
 #include "../header/Animal.h"
-#include "../header/Goose.h"
+#include "../header/Hen.h"
 
 #include <string>
 #include <iostream>
 using namespace std;
 
-Goose::Goose(){
+Hen::Hen(){
   this-> type = "";
   this-> movement = "";
   this-> sound = "";
   this-> live = true;
-  this-> color = "";
+  this-> breed = "";
 }
 
-Goose::Goose(string nBreed){
+Hen::Hen(string nBreed){
   this-> type = "";
   this-> movement = "";
   this-> sound = "";
   this-> live = true;
-  this-> color = nBreed;
+  this-> breed = nBreed;
 }
 
-Goose::Goose(string nType, bool nLive){
+Hen::Hen(string nType, bool nLive){
   this-> type = nType;
   this-> movement = "";
   this-> sound = "";
   this-> live = nLive;
-  this-> color = "";
+  this-> breed = "";
 }
 
-Goose::Goose(string nSound, bool nMove){
+Hen::Hen(string nSound, bool nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
   this-> live = "";
-  this-> color = "";
+  this-> breed = "";
 }
 
-Goose::~Goose(){}
+Hen::~Hen(){}
 
-string Goose::getColor(void){
-  return  this-> color;
+string Hen::getBreed(void){
+  return  this-> breed;
 }
 
-void Goose::setColor(string nColor){
-  this-> color = nColor;
+void Hen::setBreed(string nBreed){
+  this-> breed = nBreed;
 }
 
 /**--** inheritance methods **--**/
 
-string Goose::makeSound(void){
-  std::cout << "grazna" << std::endl;
+string Hen::makeSound(void){
+  std::cout << "cacarea" << std::endl;
 }
 
-string Goose::move(void){
-  std::cout << "vuela" << std::endl;
+string Hen::move(void){
+  std::cout << "caminar" << std::endl;
 }

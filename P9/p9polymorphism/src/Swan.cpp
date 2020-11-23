@@ -1,58 +1,58 @@
 #include "../header/Animal.h"
-#include "../header/Goose.h"
+#include "../header/Swan.h"
 
 #include <string>
 #include <iostream>
 using namespace std;
 
-Goose::Goose(){
+Swan::Swan(){
   this-> type = "";
   this-> movement = "";
   this-> sound = "";
   this-> live = true;
-  this-> color = "";
+  this-> size = "";
 }
 
-Goose::Goose(string nBreed){
+Swan::Swan(string nBreed){
   this-> type = "";
   this-> movement = "";
   this-> sound = "";
   this-> live = true;
-  this-> color = nBreed;
+  this-> size = nBreed;
 }
 
-Goose::Goose(string nType, bool nLive){
+Swan::Swan(string nType, bool nLive){
   this-> type = nType;
   this-> movement = "";
   this-> sound = "";
   this-> live = nLive;
-  this-> color = "";
+  this-> size = "";
 }
 
-Goose::Goose(string nSound, bool nMove){
+Swan::Swan(string nSound, bool nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
   this-> live = "";
-  this-> color = "";
+  this-> size = "";
 }
 
-Goose::~Goose(){}
+Swan::~Swan(){}
 
-string Goose::getColor(void){
-  return  this-> color;
+string Swan::getColor(void){
+  return  this-> size;
 }
 
-void Goose::setColor(string nColor){
-  this-> color = nColor;
+void Swan::setColor(string nSize){
+  this-> size = nSize;
 }
 
 /**--** inheritance methods **--**/
 
-string Goose::makeSound(void){
-  std::cout << "grazna" << std::endl;
+string Swan::makeSound(void){
+  std::cout << "vozna" << std::endl;
 }
 
-string Goose::move(void){
+string Swan::move(void){
   std::cout << "vuela" << std::endl;
 }
