@@ -1,5 +1,10 @@
 #include "header/GeometricObject.h"
 #include "header/Sphere.h"
+#include "header/Cube.h"
+#include "header/Cylinder.h"
+#include "header/Pyramid.h"
+
+
 
 #include <iostream>
 #include <iomanip>
@@ -12,29 +17,34 @@ int main(){
   cin >> op;
 
   if(figure == "c"){
+    Cube obj;
     if(op == "a"){
-
+      double lateral;
+      cin >> lateral;
+      obj.setLateral(lateral);
+      std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-
+      double lateral;
+      cin >> lateral;
+      obj.setLateral(lateral);
+      std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
     else if(op == "l"){
-
+      std::cout << obj.getLateral() << std::endl;
     }                                    
 
     }
   else if(figure == "s"){
     Sphere obj;
+    double ratio;
+    cin >> ratio;
 
     if(op == "a"){
-      double ratio;
-      cin >> ratio;
       obj.setRatio(ratio);
       std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-      double ratio;
-      cin >> ratio;
       obj.setRatio(ratio);
       std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
@@ -47,35 +57,58 @@ int main(){
   }
 
   else if(figure == "p"){
-    if(op == "a"){
+    Pyramid obj;
+    double lateral,width,height;
+    cin >> lateral;
+    cin >> width;
+    cin >> height;
 
+    obj.setLateral(lateral);
+    obj.setWidth(width);
+    obj.setHeight(height);
+
+    if(op == "a"){
+      std::cout << std::setprecision(10) << obj.getArea() << std::endl;   
     }
     else if(op == "v"){
-
+      std::cout << std::setprecision(10) << obj.getVolume() << std::endl;
     }
-    else if(op == "w"){
 
+    else if(op == "w"){
+      std::cout << obj.getWidth() << std::endl;
     }
     else if(op == "h"){
-
+      std::cout << obj.getHeight() << std::endl;
     }
     else if(op == "l"){
-
+      std::cout << obj.getLateral() << std::endl;
     }
   }
 
   else if(figure == "y"){
-    if(op == "a"){
+    Cylinder obj;
 
+    if(op == "a"){
+      double ratio, height;
+      cin >> ratio;
+      cin >> height;
+      obj.setRatio(ratio);
+      obj.setHeight(height);
+      std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-
+      double ratio, height;
+      cin >> ratio;
+      cin >> height;
+      obj.setRatio(ratio);
+      obj.setHeight(height);
+      std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
     else if(op == "r"){
-
+      std::cout << obj.getRatio() << std::endl;
     }
     else if(op == "h"){
-
+      std::cout << obj.getHeight() << std::endl;
     }
   }
 
