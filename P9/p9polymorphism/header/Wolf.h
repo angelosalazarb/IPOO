@@ -1,79 +1,79 @@
 /**
- * @file Swan.h
+ * @file Wolf.h
  * @author Ángelo Salazar (angelo.salazar@correounivalle.edu.co)
  * @version 0.1
  * @date 2020-20-13
  */
-#ifndef SWAN_H_
-#define SWAN_H_
+#ifndef WOLF_H_
+#define WOLF_H_
 #include "../header/Animal.h"
 
 #include <string>
 using namespace std;
 
-class Swan : public Animal{
+class Wolf : public Animal{
   private:
-  string size;
+  string breed;
 
   public:
   
   /**
-   * Construct a new Swan object
-   * @contract <Swan><> ---> <obj>
+   * Construct a new Wolf object
+   * @contract <Wolf><> ---> <obj>
    * 
    **/
-  Swan();
+  Wolf();
 
   /**
-   * Construct a new Swan object
+   * Construct a new Wolf object
    * @contract <Animal><str> ---> <obj>
    * 
-   * @param size 
+   * @param breed 
    **/
-  Swan(string size);
+  Wolf(string breed);
 
   /**
-   * Construct a new Swan object
+   * Construct a new Wolf object
    * @contract <Animal><str><bool> ---> <obj>
    * 
    * @param nType 
    * @param nLive 
    **/
-  Swan(string nType, bool nLive);
+  Wolf(string nType, bool nLive);
 
   /**
-   * Construct a new Swan object
+   * Construct a new Wolf object
    * @contract <Animal><str><str> ---> <obj>
    * 
    * @param nSound 
    * @param nMove 
    **/
-  Swan(string nSound, string nMove);
+  Wolf(string nSound, string nMove);
 
   /**
-   * Destroy the Swan object
+   * Destroy the Wolf object
    * @contract <><> ---> <>
    * 
    **/
-  ~Swan();
+  ~Wolf();
 
   /**--** getters and setter **--**/
 
   /**
-   * Get the size of the object
-   * @contract <getSize><void> ---> <str>
+   * Get the Breed of the object
+   * @contract <getBreed><void> ---> <str>
    * 
    * @return string 
    **/
-  string getSize(void);
+  string getBreed(void);
 
   /**
-   * Set the size of the object
-   * @contract <setSize><str> ---> <void>
+   * Set the Breed of the object
+   * @contract <setBreed><str> ---> <void>
    * 
-   * @param nSize 
+   * @param nBreed 
    **/
-  void setSize(string nSize);
+  void setBreed(string nBreed);
   
   /**--** inheritance methods **--**/
 

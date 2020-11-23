@@ -1,79 +1,79 @@
 /**
- * @file Swan.h
+ * @file Donkey.h
  * @author Ángelo Salazar (angelo.salazar@correounivalle.edu.co)
  * @version 0.1
  * @date 2020-20-13
  */
-#ifndef SWAN_H_
-#define SWAN_H_
+#ifndef DONKEY_H_
+#define DONKEY_H_
 #include "../header/Animal.h"
 
 #include <string>
 using namespace std;
 
-class Swan : public Animal{
+class Donkey : public Animal{
   private:
-  string size;
+  int age;
 
   public:
   
   /**
-   * Construct a new Swan object
-   * @contract <Swan><> ---> <obj>
+   * Construct a new Donkey object
+   * @contract <Donkey><> ---> <obj>
    * 
    **/
-  Swan();
+  Donkey();
 
   /**
-   * Construct a new Swan object
-   * @contract <Animal><str> ---> <obj>
+   * Construct a new Donkey object
+   * @contract <Animal><int> ---> <obj>
    * 
-   * @param size 
+   * @param age 
    **/
-  Swan(string size);
+  Donkey(int age);
 
   /**
-   * Construct a new Swan object
+   * Construct a new Donkey object
    * @contract <Animal><str><bool> ---> <obj>
    * 
    * @param nType 
    * @param nLive 
    **/
-  Swan(string nType, bool nLive);
+  Donkey(string nType, bool nLive);
 
   /**
-   * Construct a new Swan object
+   * Construct a new Donkey object
    * @contract <Animal><str><str> ---> <obj>
    * 
    * @param nSound 
    * @param nMove 
    **/
-  Swan(string nSound, string nMove);
+  Donkey(string nSound, string nMove);
 
   /**
-   * Destroy the Swan object
+   * Destroy the Donkey object
    * @contract <><> ---> <>
    * 
    **/
-  ~Swan();
+  ~Donkey();
 
   /**--** getters and setter **--**/
 
   /**
-   * Get the size of the object
-   * @contract <getSize><void> ---> <str>
+   * Get the age of the object
+   * @contract <getAge><void> ---> <int>
    * 
-   * @return string 
+   * @return int 
    **/
-  string getSize(void);
+  int getAge(void);
 
   /**
-   * Set the size of the object
-   * @contract <setSize><str> ---> <void>
+   * Set the age of the object
+   * @contract <setAge><int> ---> <void>
    * 
-   * @param nSize 
+   * @param nAge 
    **/
-  void setSize(string nSize);
+  void setAge(int nAge);
   
   /**--** inheritance methods **--**/
 
