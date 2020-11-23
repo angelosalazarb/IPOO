@@ -61,14 +61,14 @@ class Animal{
   
   /**
    * Print the sound make by the animal
-   * @contract <makeSound><void> ---> <void>
+   * @contract <makeSound><string> ---> <void>
    * 
    **/
   virtual string makeSound(void);
 
   /**
    * Print the movement make by the animal
-   * @contract <move><void> ---> <void>
+   * @contract <move><string> ---> <void>
    * 
    **/
   virtual string move(void);

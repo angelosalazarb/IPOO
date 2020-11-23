@@ -29,7 +29,7 @@ Goose::Goose(string nType, bool nLive){
   this-> color = "";
 }
 
-Goose::Goose(string nSound, bool nMove){
+Goose::Goose(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Goose::setColor(string nColor){
 /**--** inheritance methods **--**/
 
 string Goose::makeSound(void){
-  std::cout << "grazna" << std::endl;
+  this->sound = "grazna";
+  return this-> sound;
 }
 
 string Goose::move(void){
-  std::cout << "vuela" << std::endl;
+  this->movement = "vuela";
+  return this-> movement;
 }

@@ -29,7 +29,7 @@ Dog::Dog(string nType, bool nLive){
   this-> breed = "";
 }
 
-Dog::Dog(string nSound, bool nMove){
+Dog::Dog(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Dog::setBreed(string nBreed){
 /**--** inheritance methods **--**/
 
 string Dog::makeSound(void){
-  std::cout << "ladra" << std::endl;
+ this->sound = "ladra";
+  return this-> sound;
 }
 
 string Dog::move(void){
-  std::cout << "caminar" << std::endl;
+  this->movement = "caminar";
+  return this-> movement;
 }

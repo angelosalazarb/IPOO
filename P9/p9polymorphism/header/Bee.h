@@ -4,8 +4,8 @@
  * @version 0.1
  * @date 2020-20-13
  */
-#ifndef CAT_H_
-#define CAT_H_
+#ifndef BEE_H_
+#define BEE_H_
 #include "../header/Animal.h"
 
 #include <string>

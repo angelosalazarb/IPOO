@@ -29,7 +29,7 @@ Hen::Hen(string nType, bool nLive){
   this-> breed = "";
 }
 
-Hen::Hen(string nSound, bool nMove){
+Hen::Hen(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Hen::setBreed(string nBreed){
 /**--** inheritance methods **--**/
 
 string Hen::makeSound(void){
-  std::cout << "cacarea" << std::endl;
+  this->sound = "cacarea";
+  return this-> sound;
 }
 
 string Hen::move(void){
-  std::cout << "caminar" << std::endl;
+  this->movement = "camina";
+  return this-> movement;
 }

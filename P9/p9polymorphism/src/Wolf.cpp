@@ -29,7 +29,7 @@ Wolf::Wolf(string nType, bool nLive){
   this-> breed = "";
 }
 
-Wolf::Wolf(string nSound, bool nMove){
+Wolf::Wolf(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Wolf::setBreed(string nBreed){
 /**--** inheritance methods **--**/
 
 string Wolf::makeSound(void){
-  std::cout << "aúlla" << std::endl;
+  this->sound = "aúlla";
+  return this-> sound;
 }
 
 string Wolf::move(void){
-  std::cout << "caminar" << std::endl;
+  this->movement = "camina";
+  return this-> movement;
 }

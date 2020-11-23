@@ -29,7 +29,7 @@ Swan::Swan(string nType, bool nLive){
   this-> size = "";
 }
 
-Swan::Swan(string nSound, bool nMove){
+Swan::Swan(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -39,20 +39,22 @@ Swan::Swan(string nSound, bool nMove){
 
 Swan::~Swan(){}
 
-string Swan::getColor(void){
+string Swan::getSize(void){
   return  this-> size;
 }
 
-void Swan::setColor(string nSize){
+void Swan::setSize(string nSize){
   this-> size = nSize;
 }
 
 /**--** inheritance methods **--**/
 
 string Swan::makeSound(void){
-  std::cout << "vozna" << std::endl;
+  this->sound = "vozna";
+  return this->sound;
 }
 
 string Swan::move(void){
-  std::cout << "vuela" << std::endl;
+  this->movement = "vuela";
+  return this-> movement;
 }

@@ -29,7 +29,7 @@ Donkey::Donkey(string nType, bool nLive){
   this-> age = 0;
 }
 
-Donkey::Donkey(string nSound, bool nMove){
+Donkey::Donkey(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Donkey::setAge(int nAge){
 /**--** inheritance methods **--**/
 
 string Donkey::makeSound(void){
-  std::cout << "rebuzna" << std::endl;
+  this->sound = "rebuzna";
+  return this-> sound;
 }
 
 string Donkey::move(void){
-  std::cout << "camina" << std::endl;
+  this->movement = "camina";
+  return this-> movement;
 }

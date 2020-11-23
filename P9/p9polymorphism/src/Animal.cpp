@@ -40,6 +40,6 @@ void Animal::setLive(bool nLive){
   this-> live = nLive;
 }
 
-string Animal::makeSound(void){}
-string Animal::move(void){}
+string Animal::makeSound(void){return this->sound;}
+string Animal::move(void){return this->movement;}
 

@@ -29,7 +29,7 @@ Bee::Bee(string nType, bool nLive){
   this-> honey = "";
 }
 
-Bee::Bee(string nSound, bool nMove){
+Bee::Bee(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Bee::setHoney(string nHoney){
 /**--** inheritance methods **--**/
 
 string Bee::makeSound(void){
-  std::cout << "susurra" << std::endl;
+  this->sound = "susurra";
+  return this-> sound;
 }
 
 string Bee::move(void){
-  std::cout << "vuela" << std::endl;
+  this->movement = "vuela";
+  return this-> movement;
 }

@@ -29,7 +29,7 @@ Cat::Cat(string nType, bool nLive){
   this-> breed = "";
 }
 
-Cat::Cat(string nSound, bool nMove){
+Cat::Cat(string nSound, string nMove){
   this-> type = "";
   this-> movement = nMove;
   this-> sound = nSound;
@@ -50,9 +50,11 @@ void Cat::setBreed(string nBreed){
 /**--** inheritance methods **--**/
 
 string Cat::makeSound(void){
-  std::cout << "maúlla" << std::endl;
+  this->movement = "maúlla";
+  return this-> movement;
 }
 
 string Cat::move(void){
-  std::cout << "camina" << std::endl;
+  this->movement = "camina";
+  return this-> movement;
 }
