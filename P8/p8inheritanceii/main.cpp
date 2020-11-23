@@ -3,6 +3,8 @@
 #include "header/Cube.h"
 #include "header/Cylinder.h"
 #include "header/Pyramid.h"
+#include "header/Cone.h"
+
 
 
 
@@ -16,36 +18,35 @@ int main(){
   cin >> figure;
   cin >> op;
 
+  //Cube
   if(figure == "c"){
     Cube obj;
+    double lateral;
+    cin >> lateral;
+    obj.setLateral(lateral);
+
     if(op == "a"){
-      double lateral;
-      cin >> lateral;
-      obj.setLateral(lateral);
       std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-      double lateral;
-      cin >> lateral;
-      obj.setLateral(lateral);
       std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
     else if(op == "l"){
       std::cout << obj.getLateral() << std::endl;
     }                                    
 
-    }
+  }
+  //Sphere
   else if(figure == "s"){
     Sphere obj;
     double ratio;
     cin >> ratio;
+    obj.setRatio(ratio);
 
     if(op == "a"){
-      obj.setRatio(ratio);
       std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-      obj.setRatio(ratio);
       std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
     else if(op == "r"){
@@ -55,7 +56,7 @@ int main(){
       std::cout << obj.getDiameter() << std::endl;
     }
   }
-
+  //Pyramid
   else if(figure == "p"){
     Pyramid obj;
     double lateral,width,height;
@@ -84,24 +85,19 @@ int main(){
       std::cout << obj.getLateral() << std::endl;
     }
   }
-
+  //Cylinder
   else if(figure == "y"){
     Cylinder obj;
+    double ratio, height;
+    cin >> ratio;
+    cin >> height;
+    obj.setRatio(ratio);
+    obj.setHeight(height);
 
     if(op == "a"){
-      double ratio, height;
-      cin >> ratio;
-      cin >> height;
-      obj.setRatio(ratio);
-      obj.setHeight(height);
       std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-      double ratio, height;
-      cin >> ratio;
-      cin >> height;
-      obj.setRatio(ratio);
-      obj.setHeight(height);
       std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
     else if(op == "r"){
@@ -113,17 +109,24 @@ int main(){
   }
 
   else if(figure == "n"){
+    Cone obj;
+    double ratio, height;
+    cin >> ratio;
+    cin >> height;
+    obj.setRatio(ratio);
+    obj.setHeight(height);
+  
     if(op == "a"){
-
+      std::cout << std::setprecision(10) << obj.getArea() << std::endl; 
     }
     else if(op == "v"){
-
+      std::cout << std::setprecision(10) << obj.getVolume() << std::endl; 
     }
-    else if(op == "w"){
-
+    else if(op == "r"){
+      std::cout << obj.getRatio() << std::endl;
     }
     else if(op == "h"){
-
+      std::cout << obj.getHeight() << std::endl;
     }
   }
   
