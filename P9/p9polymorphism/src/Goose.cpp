@@ -13,12 +13,12 @@ Bee::Bee(){
   this-> honey = "";
 }
 
-Bee::Bee(string nHoney){
+Bee::Bee(string nBreed){
   this-> type = "";
   this-> movement = "";
   this-> sound = "";
   this-> live = true;
-  this-> honey = nHoney;
+  this-> honey = nBreed;
 }
 
 Bee::Bee(string nType, bool nLive){
@@ -43,8 +43,8 @@ string Bee::getHoney(void){
   return  this-> honey;
 }
 
-void Bee::setHoney(string nHoney){
-  this-> honey = nHoney;
+void Bee::setHoney(string nBreed){
+  this-> honey = nBreed;
 }
 
 /**--** inheritance methods **--**/

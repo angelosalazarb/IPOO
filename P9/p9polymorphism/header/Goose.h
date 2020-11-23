@@ -1,79 +1,79 @@
 /**
- * @file Cat.h
+ * @file Goose.h
  * @author Ángelo Salazar (angelo.salazar@correounivalle.edu.co)
  * @version 0.1
  * @date 2020-20-13
  */
-#ifndef CAT_H_
-#define CAT_H_
+#ifndef GOOSE_H_
+#define GOOSE_H_
 #include "../header/Animal.h"
 
 #include <string>
 using namespace std;
 
-class Cat : public Animal{
+class Goose : public Animal{
   private:
-  string breed;
+  string color;
 
   public:
   
   /**
-   * Construct a new Cat object
-   * @contract <Cat><> ---> <obj>
+   * Construct a new Goose object
+   * @contract <Goose><> ---> <obj>
    * 
    **/
-  Cat();
+  Goose();
 
   /**
-   * Construct a new Cat object
+   * Construct a new Goose object
    * @contract <Animal><str> ---> <obj>
    * 
-   * @param breed 
+   * @param color 
    **/
-  Cat(string breed);
+  Goose(string color);
 
   /**
-   * Construct a new Cat object
+   * Construct a new Goose object
    * @contract <Animal><str><bool> ---> <obj>
    * 
    * @param nType 
    * @param nLive 
    **/
-  Cat(string nType, bool nLive);
+  Goose(string nType, bool nLive);
 
   /**
-   * Construct a new Cat object
+   * Construct a new Goose object
    * @contract <Animal><str><str> ---> <obj>
    * 
    * @param nSound 
    * @param nMove 
    **/
-  Cat(string nSound, string nMove);
+  Goose(string nSound, string nMove);
 
   /**
-   * Destroy the Cat object
+   * Destroy the Goose object
    * @contract <><> ---> <>
    * 
    **/
-  ~Cat();
+  ~Goose();
 
   /**--** getters and setter **--**/
 
   /**
-   * Get the Breed of the object
-   * @contract <getBreed><void> ---> <str>
+   * Get the color of the object
+   * @contract <getColor><void> ---> <str>
    * 
    * @return string 
    **/
-  string getBreed(void);
+  string getColor(void);
 
   /**
-   * Set the Breed of the object
-   * @contract <setBreed><str> ---> <void>
+   * Set the color of the object
+   * @contract <setColor><str> ---> <void>
    * 
-   * @param nBreed 
+   * @param nColor 
    **/
-  void setBreed(string nBreed);
+  void setColor(string nColor);
   
   /**--** inheritance methods **--**/
 
