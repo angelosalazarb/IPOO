@@ -1,4 +1,5 @@
 #include "../header/Volunteer.h"
+#include "../header/Staff.h"
 
 #include <string>
 using namespace std;
@@ -17,6 +18,8 @@ Volunteer::Volunteer(string nName, string nCharge, int nSalary):Staff(nName,nCha
 
 }
 
+Volunteer::~Volunteer(){}
+
 void Volunteer::setSalary(int nSalary){
-  this-> salary = 0;
+  this-> salary = nSalary;
 }

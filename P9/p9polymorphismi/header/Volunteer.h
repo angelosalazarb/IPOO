@@ -25,6 +25,8 @@ class Volunteer : public Staff{
   
   Volunteer(string, string, int);
 
+  ~Volunteer();
+
   void setSalary(int nSalary) override;
   
 };

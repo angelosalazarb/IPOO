@@ -25,6 +25,8 @@ class Employee : public Staff{
   
   Employee(string, string, int);
 
+  ~Employee();
+
   void setSalary(int nSalary) override;
   
 };

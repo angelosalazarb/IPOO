@@ -1,4 +1,5 @@
 #include "../header/Executive.h"
+#include "../header/Staff.h"
 
 #include <string>
 using namespace std;
@@ -17,6 +18,8 @@ Executive::Executive(string nName, string nCharge, int nSalary):Staff(nName,nCha
 
 }
 
+Executive::~Executive(){}
+
 void Executive::setSalary(int nSalary){
-  this-> salary = 3000000;
+  this-> salary = nSalary;
 }

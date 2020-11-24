@@ -1,5 +1,13 @@
 #include "../header/Staff.h"
+#include "../header/Executive.h"
+#include "../header/Employee.h"
+#include "../header/Volunteer.h"
+#include "../header/Staff.h"
+#include "../header/Hourly.h"
+
+
 #include <string>
+#include <iostream>
 using namespace std;
 
 Staff::Staff(){
@@ -7,9 +15,6 @@ Staff::Staff(){
   this-> charge = "";
   this-> salary = 0;
   this -> pay = 0;
-
-  int staffQuantity = 0;
-  string *staffList = new string[staffQuantity];
 
 }
 
@@ -68,17 +73,52 @@ void Staff::setPay(int nPay){
   this-> pay = nPay;
 }
 
+void Staff::consoleFill(void){
+  int size;
+  cin >> size;
+  staffList.resize(size);
+
+  for(int index=0; index < size; index++){
+    string nName, nCharge;
+    int nSalary;
+
+    cin>> nName;
+    cin>> nCharge;
+    cin>> nSalary;
+
+    if(nCharge == "Executive"){
+      staffList[index] = new Executive(nName,nCharge,nSalary);
+    }
+
+    else if(nCharge == "Employee"){
+      staffList[index] = new Employee(nName,nCharge,nSalary);
+    }
+
+    else if(nCharge == "Hourly"){
+      staffList[index] = new Hourly(nName,nCharge,nSalary);
+    }
+
+    else if(nCharge == "Volunteer"){
+      staffList[index] = new Volunteer(nName,nCharge,nSalary);
+    }
+    else{
+      cout << "Digite un cargo correspondiente adecuado." << endl;
+    }
+  }
+
+}
+
 string Staff::payday(void){
   double amount;
   amount = 0;
   
-  for (int count=0; count < staffList.size(); count++){
-        amount += staffList[count].getPay(); 
-  }
+  for (int index=0; index < staffList.size(); index++){
+        amount += staffList[index]-> getSalary(); 
+  } 
   if (amount == 0){
     return "Thanks!";
   }else{
-    return "Total: " + to_string(amount);
+    return "Total: " + to_string(int(amount));
   }
 
  }

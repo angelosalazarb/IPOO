@@ -25,6 +25,8 @@ class Hourly : public Staff{
   
   Hourly(string, string, int);
 
+  ~Hourly();
+
   void setSalary(int nSalary) override;
   
 };

@@ -25,6 +25,8 @@ class Executive : public Staff{
   
   Executive(string, string, int);
 
+  ~Executive();
+
   void setSalary(int nSalary) override;
   
 };

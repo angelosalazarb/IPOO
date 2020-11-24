@@ -1,4 +1,6 @@
 #include "../header/Employee.h"
+#include "../header/Staff.h"
+
 
 #include <string>
 using namespace std;
@@ -17,6 +19,8 @@ Employee::Employee(string nName, string nCharge, int nSalary):Staff(nName,nCharg
 
 }
 
+Employee::~Employee(){}
+
 void Employee::setSalary(int nSalary){
-  this-> salary = 1200000;
+  this-> salary = nSalary;
 }

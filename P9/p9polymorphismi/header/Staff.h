@@ -16,7 +16,7 @@ class Staff{
     
 
   protected:
-  vector<Staff> staffList;
+  vector<Staff*> staffList;
 
   public:
   string name, charge;
@@ -28,13 +28,6 @@ class Staff{
    * 
    **/
   Staff();
-
-  /**
-   * Construct a new Staff Staff
-   * @contract <Staff><str> ---> <Obj>
-   * @param nName 
-   **/
-  Staff(string nName);
 
   /**
    * Construct a new Staff Staff
@@ -138,6 +131,8 @@ class Staff{
   /**--** other methods **--**/
 
   string payday(void);
+
+  void consoleFill();
 
 };
 

@@ -1,22 +1,25 @@
-#include "../header/Employee.h"
+#include "../header/Hourly.h"
+#include "../header/Staff.h"
 
 #include <string>
 using namespace std;
 
-Employee::Employee(){}
+Hourly::Hourly(){}
 
-Employee::Employee(string nName):Staff(nName){
-
-}
-
-Employee::Employee(string nName, string nCharge):Staff(nName,nCharge){
+Hourly::Hourly(string nName):Staff(nName){
 
 }
 
-Employee::Employee(string nName, string nCharge, int nSalary):Staff(nName,nCharge,nSalary){
+Hourly::Hourly(string nName, string nCharge):Staff(nName,nCharge){
 
 }
 
-void Employee::setSalary(int nSalary){
-  this-> salary = 980000;
+Hourly::Hourly(string nName, string nCharge, int nSalary):Staff(nName,nCharge,nSalary){
+
+}
+
+Hourly::~Hourly(){}
+
+void Hourly::setSalary(int nSalary){
+  this-> salary = nSalary;
 }
